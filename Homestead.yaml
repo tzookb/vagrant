@@ -1,0 +1,21 @@
+---
+hostname: "devServer"
+box: "hashicorp/precise64"
+
+ip: "192.168.50.4"
+memory: 2048
+cpus: 2
+
+
+folders:
+    - map: /Users/tzookb/Sites
+      to: /var/www/html/
+
+bashRun:
+    - basic.sh
+    - mysql.sh
+    - apache/apache.sh
+
+sites:
+    - map: dev.loyaltypointstore.dev
+      to: /var/www/html/lps/lps
