@@ -12,11 +12,11 @@ folders:
     - map: /Users/tzookb/Sites
       to: /var/www/html/
 
-bashRun:
-    - basic.sh
-    - mysql.sh
-    - apache/apache.sh
+#bashRun:
+    #- basic.sh
+    #- mysql.sh
+    #- apache/apache.sh
 
-sites:
-    - map: dev.loyaltypointstore.dev
-      to: /var/www/html/lps/lps
+#sites:
+    #- map: dev.loyaltypointstore.dev
+    #  to: /var/www/html/lps/lps

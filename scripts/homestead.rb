@@ -19,13 +19,11 @@ class Homestead
 
 
         # Register All Of The Configured Shared Folders
-        settings["folders"].each do |folder|
-          config.vm.synced_folder folder["map"], folder["to"], create: true, owner: "vagrant", group: "www-data", mount_options: ["dmode=775,fmode=775"]
+        unless settings['folders'].nil?
+            settings["folders"].each do |folder|
+                config.vm.synced_folder folder["map"], folder["to"], create: true, owner: "vagrant", group: "www-data", mount_options: ["dmode=775,fmode=775"]
+            end
         end
-
-
-
-        puts YAML::dump(settings['bashRun'])
 
 
         unless settings['bashRun'].nil?
