@@ -1,8 +1,9 @@
 ---
-hostname: "devServer"
+virtualBoxName: "boxName"
+hostname: "testServer"
 box: "hashicorp/precise64"
 
-ip: "192.168.50.4"
+ip: "192.168.50.11"
 memory: 2048
 cpus: 2
 

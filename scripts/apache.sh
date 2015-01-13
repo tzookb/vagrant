@@ -10,7 +10,7 @@ block="
 		Options FollowSymLinks
 		AllowOverride All
 	</Directory>
-	<Directory /web/lps/lps/>
+	<Directory $2>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride All
 		Order allow,deny
@@ -40,4 +40,5 @@ block="
 echo "$block" > "/etc/apache2/sites-available/$1.conf"
 sudo a2ensite "$1.conf"
 
+sudo mkdir /var/log/apache2/$1
 sudo service apache2 reload
