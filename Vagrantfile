@@ -8,15 +8,15 @@ require path + '/scripts/homestead.rb'
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
-  #Dir.foreach('servers') do |item|
-  #  next if item == '.' or item == '..'
-  #  puts(item)
-  #end
+  #each block is a server, and for each server you load each one yaml config
 
-  #config.vm.define "web" do |web|
-  #  each server will have this block
-  #end
+  config.vm.define "web" do |web|
+    Homestead.configure(web, YAML::load(File.read(path + '/servers/web.yaml')))
+  end
 
-  Homestead.configure(config, YAML::load(File.read(path + '/servers/web.yaml')))
+  config.vm.define "mysql" do |mysql|
+    Homestead.configure(mysql, YAML::load(File.read(path + '/servers/mysql.yaml')))
+  end
+
 
 end
