@@ -16,8 +16,6 @@ class Homestead
         config.vm.network :private_network, ip: settings["ip"] ||= "192.168.10.10"
 
 
-
-
         # Register All Of The Configured Shared Folders
         unless settings['folders'].nil?
             settings["folders"].each do |folder|
@@ -44,11 +42,15 @@ class Homestead
             end
         end
 
-
-
-
-
-
+        # Create all Of the configured Databases
+        unless settings['databases'].nil?
+            settings["databases"].each do |db|
+                config.vm.provision "shell" do |s|
+                    s.path = "./scripts/create_mysql_db.sh"
+                    s.args = [db]
+                end
+            end
+        end
 
 
     end

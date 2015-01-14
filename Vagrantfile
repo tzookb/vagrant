@@ -13,6 +13,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #  puts(item)
   #end
 
-  Homestead.configure(config, YAML::load(File.read(path + '/Homestead.yaml')))
+  #config.vm.define "web" do |web|
+  #  each server will have this block
+  #end
+
+  Homestead.configure(config, YAML::load(File.read(path + '/servers/web.yaml')))
 
 end
