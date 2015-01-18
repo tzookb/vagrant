@@ -10,6 +10,4 @@ xdebug.cli_color=1
 xdebug.show_local_vars=1
 EOF
 
-echo "now we need to restart the server"
-echo " -------------------------  Restarting Nginx  ------------------------- "
-echo "sudo service nginx restart"
+echo " -------------------------  YOU NEED TO RESTART SERVER  ------------------------- "
