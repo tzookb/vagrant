@@ -36,7 +36,11 @@ class Homestead
         unless settings['sites'].nil?
             settings["sites"].each do |site|
                 config.vm.provision "shell" do |s|
-                    s.inline = "bash /vagrant/scripts/apache.sh $1 $2"
+                    if site["type"] == "nginx"
+                        s.inline = "bash /vagrant/scripts/nginx.sh $1 $2"
+                    else
+                        s.inline = "bash /vagrant/scripts/apache.sh $1 $2"
+                    end
                     s.args = [site["map"], site["to"]]
                 end
             end

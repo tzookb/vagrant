@@ -14,9 +14,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     Homestead.configure(web, YAML::load(File.read(path + '/servers/web.yaml')))
   end
 
-  config.vm.define "mysql" do |mysql|
-    Homestead.configure(mysql, YAML::load(File.read(path + '/servers/mysql.yaml')))
-  end
+  #config.vm.define "mysql" do |mysql|
+  #  Homestead.configure(mysql, YAML::load(File.read(path + '/servers/mysql.yaml')))
+  #end
 
 
 end

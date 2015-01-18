@@ -9,19 +9,20 @@ cpus: 2
 
 
 folders:
-    - map: /Users/tzookb/Sites
-      to: /var/www/html/
+    - map: /folder/on/your/computer
+      to: /folder/on/server
 
 bashRun:
     - basic.sh
-    #- mysql.sh
-    - apache/apache.sh
+    - mysql.sh
+    - nginx/nginx.sh
     - composer.sh
     #- npm.sh
 
-#sites:
-    #- map: dev.loyaltypointstore.dev
-    #  to: /var/www/html/lps/lps
+sites:
+    - map: dev.example.com
+      to: /folder/on/server/example.com/public
+      type: nginx
 
-#databases:
-    #- tzook
+databases:
+    - example_db
