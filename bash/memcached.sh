@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo " -------------------------  Install Redis  ------------------------- "
+echo " -------------------------  Install memcached  ------------------------- "
 
 sudo apt-get update
-sudo apt-get install php5-memcached memcached
+sudo apt-get install -y php5-memcached memcached
