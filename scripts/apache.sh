@@ -13,16 +13,14 @@ block="
 	<Directory $2>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride All
-		Order allow,deny
-		allow from all
+		Require all granted
 	</Directory>
 
 	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
 	<Directory "/usr/lib/cgi-bin">
 		AllowOverride None
 		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
-		Order allow,deny
-		Allow from all
+		Require all granted
 	</Directory>
 
 	ErrorLog /var/log/apache2/$1/error.log
