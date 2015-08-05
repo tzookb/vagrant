@@ -9,21 +9,20 @@ cpus: 2
 
 
 folders:
-    - map: /home/tzookb/www
-      to: /web
+    - map: /folder/on/your/computer
+      to: /folder/on/server
 
 bashRun:
     - basic.sh
     - mysql.sh
-    - apache/apache56.sh
+    - nginx/nginx.sh
     - composer.sh
-    - mongo.sh
     #- npm.sh
 
 sites:
-    - map: dev.babelfish
-      to: /web/babelfish/public
-      type: apache
+    - map: dev.example.com
+      to: /folder/on/server/example.com/public
+      type: nginx
 
 databases:
-    - babelfish
+    - example_db

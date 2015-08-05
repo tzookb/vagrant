@@ -1,3 +1,6 @@
 .DS_store
 .idea
 .vagrant
+
+servers/*.yaml
+!servers/example.yaml
